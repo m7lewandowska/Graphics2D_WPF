@@ -99,9 +99,9 @@ namespace Projekt1
                 //{
                 //    curveBTN.Background = curveBTN.Background = Brushes.Transparent;
                 //}
+
                 if (e.ButtonState == MouseButtonState.Pressed)
                     currentPoint = e.GetPosition(this);
-
             }
 
             if (this.tool == Tool.DOT)
@@ -271,6 +271,7 @@ namespace Projekt1
                 lines.Add(selectedLine.line);
                 editMode = false;
                 clearEditDots();
+                clearToolsBtns();
                 selectedLine = null;
             }
         }
@@ -310,6 +311,19 @@ namespace Projekt1
             lines.Clear();
         }
 
+        private void clearToolsBtns()
+        {
+            curveBTN.BorderBrush = Brushes.Transparent;
+            dotBTN.BorderBrush = Brushes.Transparent;
+            circleBTN.BorderBrush = Brushes.Transparent;
+            rectangleBTN.BorderBrush = Brushes.Transparent;
+            rectangleFilledBTN.BorderBrush = Brushes.Transparent;
+            triangleBTN.BorderBrush = Brushes.Transparent;
+            triangleFilledBTN.BorderBrush = Brushes.Transparent;
+            lineBTN.BorderBrush = Brushes.Transparent;
+            lineEditBTN.BorderBrush = Brushes.Transparent;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             switch (((Button)sender).Name)
@@ -318,52 +332,70 @@ namespace Projekt1
                     this.tool = Tool.CURVE;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    curveBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "dotBTN":
                     this.tool = Tool.DOT;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    dotBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "circleBTN":
                     this.tool = Tool.CIRCLE;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    circleBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "rectangleBTN":
                     this.tool = Tool.RECTANGLE;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    rectangleBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "rectangleFilledBTN":
                     this.tool = Tool.RECTANGLEFILLED;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    rectangleFilledBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "triangleBTN":
                     this.tool = Tool.TRIANGLE;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    triangleBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "triangleFilledBTN":
                     this.tool = Tool.TRIANGLEFILLED;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    triangleFilledBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "lineBTN":
                     this.tool = Tool.LINE;
                     editMode = false;
                     clearEditDots();
+                    clearToolsBtns();
+                    lineBTN.BorderBrush = Brushes.Orange;
                     break;
 
                 case "lineEditBTN":
-                    this.tool = Tool.EDITLINE; 
+                    this.tool = Tool.EDITLINE;
+                    clearToolsBtns();
+                    lineEditBTN.BorderBrush = Brushes.Orange;
 
                     if (editMode)
                     {
@@ -403,8 +435,8 @@ namespace Projekt1
                     else
                     {
                         clearEditDots();
+                        clearToolsBtns();
                     }
-
                     break;
 
                 //RED
@@ -450,6 +482,7 @@ namespace Projekt1
 
                 case "clearBTN":
                     clearCanvas();
+                    clearToolsBtns();
                     break;
             }
         }
