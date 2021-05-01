@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("editline.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("rectanglefilled.png")]
 
 

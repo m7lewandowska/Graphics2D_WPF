@@ -41,6 +41,7 @@ namespace Projekt1
         List<Ellipse> ellipses = new List<Ellipse>();
         List<MyPointWithLine> points = new List<MyPointWithLine>();
         bool editMode = false;
+        private Rectangle rect;
 
 
         class NewPoint
@@ -116,7 +117,6 @@ namespace Projekt1
                 double top = e.GetPosition(this).Y;
 
                 ellipse.Margin = new Thickness(left - 5, top - 5, 0, 0);
-
                 canvasSurface.Children.Add(ellipse);
             }
 
@@ -143,6 +143,42 @@ namespace Projekt1
             {
                 if (e.ButtonState == MouseButtonState.Pressed)
                     leftClickPoint = e.GetPosition(this);
+            }
+
+            if (this.tool == Tool.RECTANGLE)
+            {
+                currentPoint = e.GetPosition(this);
+                var bc = new BrushConverter();
+                rect = new Rectangle
+                {
+                    Fill = Brushes.Transparent,
+                    Stroke = (Brush)bc.ConvertFrom(dcolor),
+                    StrokeThickness = 1,
+                    Width = 30,
+                    Height = 10,
+                };
+
+                Canvas.SetLeft(rect, currentPoint.X);
+                Canvas.SetTop(rect, currentPoint.Y);
+                canvasSurface.Children.Add(rect);
+            }
+
+            if (this.tool == Tool.RECTANGLEFILLED)
+            {
+                currentPoint = e.GetPosition(this);
+                var bc = new BrushConverter();
+                rect = new Rectangle
+                {
+                    Fill = (Brush)bc.ConvertFrom(dcolor),
+                    Stroke = (Brush)bc.ConvertFrom(dcolor),
+                    StrokeThickness = 1,
+                    Width = 30,
+                    Height = 10,
+                };
+
+                Canvas.SetLeft(rect, currentPoint.X);
+                Canvas.SetTop(rect, currentPoint.Y);
+                canvasSurface.Children.Add(rect);
             }
         }
 
@@ -253,6 +289,18 @@ namespace Projekt1
 
                 case "circleBTN":
                     this.tool = Tool.CIRCLE;
+                    editMode = false;
+                    clearEditDots();
+                    break;
+
+                case "rectangleBTN":
+                    this.tool = Tool.RECTANGLE;
+                    editMode = false;
+                    clearEditDots();
+                    break;
+
+                case "rectangleFilledBTN":
+                    this.tool = Tool.RECTANGLEFILLED;
                     editMode = false;
                     clearEditDots();
                     break;

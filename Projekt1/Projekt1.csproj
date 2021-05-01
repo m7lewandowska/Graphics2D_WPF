@@ -115,5 +115,11 @@
   <ItemGroup>
     <Resource Include="editLine.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rectangleFilled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
