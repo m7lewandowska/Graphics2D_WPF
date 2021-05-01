@@ -66,6 +66,18 @@
             </StackPanel>
         </Button>
 
+        <Button x:Name="triangleBTN" ToolTip="Triangle" Margin="7,166,1130,394" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="triangle.png" Height="29" Width="30" />
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="triangleFilledBTN" ToolTip="Filled triangle" Margin="63,166,1074,394" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="triangleFilled.png" Height="26" Width="30" />
+            </StackPanel>
+        </Button>
+
         <Button x:Name="FFF13131" Margin="43,541,1113,36" Click="Button_Click" Background="#FFF13131"/>
         <Button x:Name="FF41F35A" Margin="77,541,1079,36" Click="Button_Click" Background="#FF41F35A"/>
         <Button x:Name="FF000000" Margin="10,541,1146,36" Click="Button_Click" Background="Black"/>
@@ -73,5 +85,4 @@
         <Button x:Name="FFF7F71F" Margin="43,571,1113,6" Click="Button_Click" Background="#FFF7F71F"/>
         <Button x:Name="FFF71FB2" Margin="77,571,1079,6" Click="Button_Click" Background="#FFF71FB2"/>
     </Grid>
-
 </Window>

@@ -121,5 +121,11 @@
   <ItemGroup>
     <Resource Include="rectangleFilled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="triangleFilled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

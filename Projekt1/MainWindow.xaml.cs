@@ -42,6 +42,7 @@ namespace Projekt1
         List<MyPointWithLine> points = new List<MyPointWithLine>();
         bool editMode = false;
         private Rectangle rect;
+        private Polygon polygon;
 
 
         class NewPoint
@@ -180,6 +181,44 @@ namespace Projekt1
                 Canvas.SetTop(rect, currentPoint.Y);
                 canvasSurface.Children.Add(rect);
             }
+
+            if (this.tool == Tool.TRIANGLE)
+            {
+                currentPoint = e.GetPosition(this);
+                var bc = new BrushConverter();
+
+                polygon = new Polygon
+                {
+                    Stroke = (Brush)bc.ConvertFrom(dcolor),
+                    StrokeThickness = 1,
+                    Fill = Brushes.Transparent,
+                    Points = new PointCollection() {
+                        new Point(currentPoint.X, currentPoint.Y),
+                        new Point((currentPoint.X) + 10, (currentPoint.Y) + 20),
+                        new Point((currentPoint.X) - 10, (currentPoint.Y) + 20)}
+                };
+
+                canvasSurface.Children.Add(polygon);
+            }
+
+            if (this.tool == Tool.TRIANGLEFILLED)
+            {
+                currentPoint = e.GetPosition(this);
+                var bc = new BrushConverter();
+
+                polygon = new Polygon
+                {
+                    Fill = (Brush)bc.ConvertFrom(dcolor),
+                    Stroke = (Brush)bc.ConvertFrom(dcolor),
+                    StrokeThickness = 1,
+                    Points = new PointCollection() {
+                        new Point(currentPoint.X, currentPoint.Y),
+                        new Point((currentPoint.X) + 10, (currentPoint.Y) + 20),
+                        new Point((currentPoint.X) - 10, (currentPoint.Y) + 20)}
+                };
+
+                canvasSurface.Children.Add(polygon);
+            }
         }
 
         private void Canvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -301,6 +340,18 @@ namespace Projekt1
 
                 case "rectangleFilledBTN":
                     this.tool = Tool.RECTANGLEFILLED;
+                    editMode = false;
+                    clearEditDots();
+                    break;
+
+                case "triangleBTN":
+                    this.tool = Tool.TRIANGLE;
+                    editMode = false;
+                    clearEditDots();
+                    break;
+
+                case "triangleFilledBTN":
+                    this.tool = Tool.TRIANGLEFILLED;
                     editMode = false;
                     clearEditDots();
                     break;
