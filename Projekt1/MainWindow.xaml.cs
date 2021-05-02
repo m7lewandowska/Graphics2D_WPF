@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Drawing;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -89,17 +91,6 @@ namespace Projekt1
 
             if (this.tool == Tool.CURVE)
             {
-                //isChecked = true;
-
-                //if (isChecked == true)
-                //{
-                //    curveBTN.Background = curveBTN.Background = Brushes.LightSteelBlue;
-                //}
-                //else
-                //{
-                //    curveBTN.Background = curveBTN.Background = Brushes.Transparent;
-                //}
-
                 if (e.ButtonState == MouseButtonState.Pressed)
                     currentPoint = e.GetPosition(this);
             }
@@ -322,6 +313,97 @@ namespace Projekt1
             triangleFilledBTN.BorderBrush = Brushes.Transparent;
             lineBTN.BorderBrush = Brushes.Transparent;
             lineEditBTN.BorderBrush = Brushes.Transparent;
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+            e.Handled = !IsValid(((TextBox)sender).Text + e.Text);
+        }
+
+        public static bool IsValid(string str)
+        {
+            int i;
+            return int.TryParse(str, out i) && i >= 0 && i <= 255;
+        }
+
+        private void textChangedEventHandler(object sender, TextChangedEventArgs args)
+        {
+            if (!(string.IsNullOrWhiteSpace(TB_R.Text)) && !(string.IsNullOrWhiteSpace(TB_G.Text)) && !(string.IsNullOrWhiteSpace(TB_B.Text)))
+            {
+                int r = Convert.ToInt32(TB_R.Text);
+                int g = Convert.ToInt32(TB_G.Text);
+                int b = Convert.ToInt32(TB_B.Text);
+
+                rgb_to_hsv(r, g, b);
+                showColor(r, g, b);
+            }
+            else
+            {
+                TB_H.Text = "0";
+                TB_S.Text = "0.0";
+                TB_V.Text = "0.0";
+                TB_HEX.Text = "";
+                showColorLBL.Background = Brushes.Transparent;
+            }
+        }
+        private void showColor(double r, double g, double b)
+        {
+            if (r <= 255 && g <= 255 && b <= 255)
+            {
+                Color myColor = Color.FromRgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
+                string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
+                var bc = new BrushConverter();
+                string hex2 = "#" + hex;
+                TB_HEX.Text = hex2;
+                showColorLBL.Background = (Brush)bc.ConvertFrom(hex2);
+            }
+            else
+            {
+                TB_HEX.Text = "Error - cannot convert color";
+                showColorLBL.Background = Brushes.Transparent;
+            }
+        }
+
+        public void rgb_to_hsv(double r, double g, double b)
+        {
+
+            r /= 255.0;
+            g /= 255.0;
+            b /= 255.0;
+
+            double cmax = Math.Max(r, Math.Max(g, b));
+            double cmin = Math.Min(r, Math.Min(g, b));
+            double diff = cmax - cmin;
+
+            double h = 0, s = 0;
+
+            if (diff == 0)
+                h = 0;
+
+            else if (cmax == r)
+                h = 60 * (((g - b) / diff) % 6);
+
+            else if (cmax == g)
+                h = 60 * (((b - r) / diff) + 2);
+
+            else if (cmax == b)
+                h = 60 * (((r - g) / diff) + 4);
+
+            if (h < 0)
+                h = 360 - Math.Abs(h);
+
+            if (cmax == 0)
+                s = 0;
+            else
+                s = (diff / cmax) * 100;
+
+            double v = cmax * 100;
+
+            TB_H.Text = Math.Round(h, 0).ToString();
+            TB_S.Text = Math.Round(s, 1).ToString();
+            TB_V.Text = Math.Round(v, 1).ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

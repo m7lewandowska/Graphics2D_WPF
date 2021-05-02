@@ -15,7 +15,7 @@
                 <SolidColorBrush Color="White" Opacity="0"/>
             </Canvas.Background>
         </Canvas>
-        <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="605" Stroke="#FFC5BEBE" VerticalAlignment="Top" Width="160" Margin="0,-3,0,0"/>
+        <Rectangle Fill="#FFF7F7F7" HorizontalAlignment="Left" Height="605" Stroke="#FFC5BEBE" VerticalAlignment="Top" Width="267" Margin="0,-3,0,0"/>
 
         <Button x:Name="curveBTN" ToolTip="Curve" Margin="10,10,1130,550" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
@@ -23,66 +23,90 @@
             </StackPanel>
         </Button>
 
-        <Button x:Name="clearBTN" ToolTip="Clear Canvas" Margin="108,541,1022,10" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="clearBTN" ToolTip="Clear Canvas" Margin="217,541,915,10" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="wipe.png" Width="35" Height="33"/>
             </StackPanel>
         </Button>
 
-        <Button x:Name="dotBTN" ToolTip="Dot" Margin="116,10,1021,550" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="dotBTN" ToolTip="Dot" Margin="205,57,932,503" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="dot.png" Height="20" Width="20"/>
             </StackPanel>
         </Button>
 
-        <Button x:Name="circleBTN" ToolTip="Circle" Margin="63,10,1074,550" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="circleBTN" ToolTip="Circle" Margin="145,57,992,503" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="circle.png" Height="20" Width="20"/>
             </StackPanel>
         </Button>
 
-        <Button x:Name="lineBTN" ToolTip="Line" Margin="7,57,1130,503" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="lineBTN" ToolTip="Line" Margin="77,10,1060,550" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="line.png" Height="25" Width="25"/>
             </StackPanel>
         </Button>
 
-        <Button x:Name="lineEditBTN" ToolTip="Change line" Margin="63,57,1030,503" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="lineEditBTN" ToolTip="Change line" Margin="145,10,932,550" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="editLine.png"  Height="25" Width="25"/>
                 <TextBlock Text="Edit Line" VerticalAlignment="Center" />
             </StackPanel>
         </Button>
 
-        <Button x:Name="rectangleBTN" ToolTip="Rectangle" Margin="7,113,1130,447" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="rectangleBTN" ToolTip="Rectangle" Margin="10,57,1127,503" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="rectangle.png" Height="29" Width="30" />
             </StackPanel>
         </Button>
 
-        <Button x:Name="rectangleFilledBTN" ToolTip="Filled rectangle" Margin="63,113,1074,447" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="rectangleFilledBTN" ToolTip="Filled rectangle" Margin="77,57,1060,503" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="rectangleFilled.png" Height="29" Width="30" />
             </StackPanel>
         </Button>
 
-        <Button x:Name="triangleBTN" ToolTip="Triangle" Margin="7,166,1130,394" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="triangleBTN" ToolTip="Triangle" Margin="12,104,1125,456" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="triangle.png" Height="29" Width="30" />
             </StackPanel>
         </Button>
 
-        <Button x:Name="triangleFilledBTN" ToolTip="Filled triangle" Margin="63,166,1074,394" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="triangleFilledBTN" ToolTip="Filled triangle" Margin="77,104,1060,456" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="triangleFilled.png" Height="26" Width="30" />
             </StackPanel>
         </Button>
 
-        <Button x:Name="FFF13131" Margin="43,541,1113,36" Click="Button_Click" Background="#FFF13131"/>
-        <Button x:Name="FF41F35A" Margin="77,541,1079,36" Click="Button_Click" Background="#FF41F35A"/>
-        <Button x:Name="FF000000" Margin="10,541,1146,36" Click="Button_Click" Background="Black"/>
-        <Button x:Name="FF484FE6" Margin="10,571,1146,6" Click="Button_Click" Background="#FF484FE6"/>
-        <Button x:Name="FFF7F71F" Margin="43,571,1113,6" Click="Button_Click" Background="#FFF7F71F"/>
-        <Button x:Name="FFF71FB2" Margin="77,571,1079,6" Click="Button_Click" Background="#FFF71FB2"/>
+        <Label Content="RED" HorizontalAlignment="Left" Margin="10,324,0,0" VerticalAlignment="Top"/>
+        <Label Content="GREEN" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+        <Label Content="BLUE" HorizontalAlignment="Left" Margin="10,398,0,0" VerticalAlignment="Top"/>
+        <Label Content="HUE" HorizontalAlignment="Left" Margin="115,324,0,0" VerticalAlignment="Top"/>
+        <Label Content="SATURATION" HorizontalAlignment="Left" Margin="115,360,0,0" VerticalAlignment="Top"/>
+        <Label Content="VALUE" HorizontalAlignment="Left" Margin="115,398,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="TB_R" TextChanged="textChangedEventHandler" HorizontalAlignment="Left" Height="22" Margin="57,328,0,0" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="40" Background="#FFE8E8E8" MaxLength="3"/>
+        <TextBox x:Name="TB_G" TextChanged="textChangedEventHandler" HorizontalAlignment="Left" Height="22" Margin="57,364,0,0" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="40" Background="#FFE8E8E8" MaxLength="3"/>
+        <TextBox x:Name="TB_B" TextChanged="textChangedEventHandler" HorizontalAlignment="Left" Height="22" Margin="57,402,0,0" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="40" Background="#FFE8E8E8" MaxLength="3"/>
+
+        <TextBox x:Name="TB_H" HorizontalAlignment="Left" Height="26" Margin="200,324,0,0" Text="" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="43" UndoLimit="3" Background="#FFE8E8E8" IsEnabled="False"/>
+        <TextBox x:Name="TB_S" HorizontalAlignment="Left" Height="26" Margin="200,360,0,0" Text="" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="43" UndoLimit="3" Background="#FFE8E8E8" IsEnabled="False"/>
+        <TextBox x:Name="TB_V" HorizontalAlignment="Left" Height="26" Margin="200,398,0,0" Text="" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="43" UndoLimit="3" Background="#FFE8E8E8" IsEnabled="False"/>
+        <Label Content="°" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="248,324,0,0" FontSize="14" Height="26"/>
+        <Label Content="%" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="243,360,0,0"/>
+        <Label Content="%" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="243,398,0,0"/>
+
+        <Label x:Name="showColorLBL" Content="" HorizontalAlignment="Left" Height="30" Margin="12,486,0,0" VerticalAlignment="Top" Width="231" Background="{x:Null}" />
+        <Label Content="HEX" HorizontalAlignment="Left" Margin="10,448,0,0" VerticalAlignment="Top"/>
+
+        <Button x:Name="FFF13131" Margin="45,560,1111,17" Click="Button_Click" Background="#FFF13131"/>
+        <Button x:Name="FF41F35A" Margin="79,560,1077,17" Click="Button_Click" Background="#FF41F35A"/>
+        <Button x:Name="FF000000" Margin="10,560,1146,17" Click="Button_Click" Background="Black"/>
+        <Button x:Name="FF484FE6" Margin="186,560,970,17" Click="Button_Click" Background="#FF484FE6"/>
+        <Button x:Name="FFF7F71F" Margin="150,560,1006,17" Click="Button_Click" Background="#FFF7F71F"/>
+        <Button x:Name="FFF71FB2" Margin="115,560,1041,17" Click="Button_Click" Background="#FFF71FB2"/>
+        <TextBox x:Name="TB_HEX" HorizontalAlignment="Left" Height="26" Margin="57,448,0,0" Text="" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="186" UndoLimit="3" Background="#FFE8E8E8" IsEnabled="False"/>
+
+
     </Grid>
 </Window>
