@@ -28,3 +28,5 @@ D:\08_GIT\Graphics2D_WPF\Projekt1\obj\Debug\Projekt1.csproj.GenerateResource.cac
 D:\08_GIT\Graphics2D_WPF\Projekt1\obj\Debug\Projekt1.csproj.CoreCompileInputs.cache
 D:\08_GIT\Graphics2D_WPF\Projekt1\obj\Debug\Projekt1.exe
 D:\08_GIT\Graphics2D_WPF\Projekt1\obj\Debug\Projekt1.pdb
+D:\08_GIT\Graphics2D_WPF\Projekt1\obj\Debug\Window2.g.cs
+D:\08_GIT\Graphics2D_WPF\Projekt1\obj\Debug\Window2.baml

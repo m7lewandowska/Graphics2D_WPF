@@ -78,6 +78,13 @@
             </StackPanel>
         </Button>
 
+        <Button x:Name="imageBTN" ToolTip="Image filtering" Margin="145,104,932,456" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="image.png" Height="26" Width="30" />
+                <TextBlock Text="Use Filter" VerticalAlignment="Center" />
+            </StackPanel>
+        </Button>
+
         <Label Content="RED" HorizontalAlignment="Left" Margin="10,324,0,0" VerticalAlignment="Top"/>
         <Label Content="GREEN" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
         <Label Content="BLUE" HorizontalAlignment="Left" Margin="10,398,0,0" VerticalAlignment="Top"/>

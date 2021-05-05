@@ -7,7 +7,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Drawing;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -29,6 +28,7 @@ namespace Projekt1
         TRIANGLE,
         RECTANGLE,
         RECTANGLEFILLED,
+        IMAGEFILTER,
         DOT
     }
 
@@ -89,6 +89,7 @@ namespace Projekt1
                 }
             }
 
+            
             if (this.tool == Tool.CURVE)
             {
                 if (e.ButtonState == MouseButtonState.Pressed)
@@ -313,6 +314,7 @@ namespace Projekt1
             triangleFilledBTN.BorderBrush = Brushes.Transparent;
             lineBTN.BorderBrush = Brushes.Transparent;
             lineEditBTN.BorderBrush = Brushes.Transparent;
+            imageBTN.BorderBrush = Brushes.Transparent;
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -406,6 +408,12 @@ namespace Projekt1
             TB_V.Text = Math.Round(v, 1).ToString();
         }
 
+        private void makeFilter()
+        {
+            Window2 win2 = new Window2();
+            win2.Show();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             switch (((Button)sender).Name)
@@ -415,7 +423,7 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    curveBTN.BorderBrush = Brushes.Orange;
+                    curveBTN.BorderBrush = Brushes.CornflowerBlue;
                     break;
 
                 case "dotBTN":
@@ -423,7 +431,7 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    dotBTN.BorderBrush = Brushes.Orange;
+                    dotBTN.BorderBrush = Brushes.CornflowerBlue;
                     break;
 
                 case "circleBTN":
@@ -431,7 +439,7 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    circleBTN.BorderBrush = Brushes.Orange;
+                    circleBTN.BorderBrush = Brushes.CornflowerBlue;
                     break;
 
                 case "rectangleBTN":
@@ -439,7 +447,7 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    rectangleBTN.BorderBrush = Brushes.Orange;
+                    rectangleBTN.BorderBrush = Brushes.CornflowerBlue;
                     break;
 
                 case "rectangleFilledBTN":
@@ -447,7 +455,7 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    rectangleFilledBTN.BorderBrush = Brushes.Orange;
+                    rectangleFilledBTN.BorderBrush = Brushes.CornflowerBlue;
                     break;
 
                 case "triangleBTN":
@@ -455,7 +463,7 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    triangleBTN.BorderBrush = Brushes.Orange;
+                    triangleBTN.BorderBrush = Brushes.CornflowerBlue;
                     break;
 
                 case "triangleFilledBTN":
@@ -463,7 +471,7 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    triangleFilledBTN.BorderBrush = Brushes.Orange;
+                    triangleFilledBTN.BorderBrush = Brushes.CornflowerBlue;
                     break;
 
                 case "lineBTN":
@@ -471,13 +479,23 @@ namespace Projekt1
                     editMode = false;
                     clearEditDots();
                     clearToolsBtns();
-                    lineBTN.BorderBrush = Brushes.Orange;
+                    lineBTN.BorderBrush = Brushes.CornflowerBlue;
+                    break;
+
+                case "imageBTN":
+                    this.tool = Tool.IMAGEFILTER;
+                    editMode = false;
+                    clearEditDots();
+                    clearToolsBtns();
+                    //imageBTN.BorderBrush = Brushes.CornflowerBlue;
+                    makeFilter();
+
                     break;
 
                 case "lineEditBTN":
                     this.tool = Tool.EDITLINE;
                     clearToolsBtns();
-                    lineEditBTN.BorderBrush = Brushes.Orange;
+                    lineEditBTN.BorderBrush = Brushes.CornflowerBlue;
 
                     if (editMode)
                     {
