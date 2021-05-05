@@ -106,14 +106,12 @@
         <Label x:Name="showColorLBL" Content="" HorizontalAlignment="Left" Height="30" Margin="12,486,0,0" VerticalAlignment="Top" Width="231" Background="{x:Null}" />
         <Label Content="HEX" HorizontalAlignment="Left" Margin="10,448,0,0" VerticalAlignment="Top"/>
 
-        <Button x:Name="FFF13131" Margin="45,560,1111,17" Click="Button_Click" Background="#FFF13131"/>
-        <Button x:Name="FF41F35A" Margin="79,560,1077,17" Click="Button_Click" Background="#FF41F35A"/>
-        <Button x:Name="FF000000" Margin="10,560,1146,17" Click="Button_Click" Background="Black"/>
-        <Button x:Name="FF484FE6" Margin="186,560,970,17" Click="Button_Click" Background="#FF484FE6"/>
-        <Button x:Name="FFF7F71F" Margin="150,560,1006,17" Click="Button_Click" Background="#FFF7F71F"/>
-        <Button x:Name="FFF71FB2" Margin="115,560,1041,17" Click="Button_Click" Background="#FFF71FB2"/>
+        <Button x:Name="redColorBTN" Margin="45,560,1111,17" Click="Button_Click" Background="#FFF13131"/>
+        <Button x:Name="greenColorBTN" Margin="79,560,1077,17" Click="Button_Click" Background="#FF41F35A"/>
+        <Button x:Name="blackColorBTN" Margin="10,560,1146,17" Click="Button_Click" Background="Black"/>
+        <Button x:Name="blueColorBTN" Margin="186,560,970,17" Click="Button_Click" Background="#FF484FE6"/>
+        <Button x:Name="yellowColorBTN" Margin="150,560,1006,17" Click="Button_Click" Background="#FFF7F71F"/>
+        <Button x:Name="pinkColorBTN" Margin="115,560,1041,17" Click="Button_Click" Background="#FFF71FB2"/>
         <TextBox x:Name="TB_HEX" HorizontalAlignment="Left" Height="26" Margin="57,448,0,0" Text="" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="186" UndoLimit="3" Background="#FFE8E8E8" IsEnabled="False"/>
-
-
     </Grid>
 </Window>

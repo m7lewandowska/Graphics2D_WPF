@@ -317,6 +317,16 @@ namespace Projekt1
             imageBTN.BorderBrush = Brushes.Transparent;
         }
 
+        private void clearColorBrush()
+        {
+            redColorBTN.BorderBrush = Brushes.Transparent;
+            blueColorBTN.BorderBrush = Brushes.Transparent;
+            yellowColorBTN.BorderBrush = Brushes.Transparent;
+            greenColorBTN.BorderBrush = Brushes.Transparent;
+            blackColorBTN.BorderBrush = Brushes.Transparent;
+            pinkColorBTN.BorderBrush = Brushes.Transparent;
+        }
+
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
@@ -540,41 +550,45 @@ namespace Projekt1
                     break;
 
                 //RED
-                case "FFF13131":
+                case "redColorBTN":
                     this.dcolor = "#FFF13131";
                     editMode = false;
                     clearEditDots();
+                    //clearColorBrush();
+                    //redColorBTN.BorderThickness = new Thickness(3, 3, 3, 3);
+                    //redColorBTN.BorderBrush = Brushes.LightGray;
                     break;
 
                 //GREEN
-                case "FF41F35A":
+                case "greenColorBTN":
                     this.dcolor = "#FF41F35A";
                     editMode = false;
                     clearEditDots();
                     break;
 
                 //BLACK
-                case "FF000000":
+                case "blackColorBTN":
                     this.dcolor = "#FF000000";
                     editMode = false;
                     clearEditDots();
                     break;
 
                 //BLUE
-                case "FF484FE6":
+                case "blueColorBTN":
                     this.dcolor = "#FF484FE6";
                     editMode = false;
                     clearEditDots();
                     break;
 
                 //YELLOW
-                case "FFF7F71F":
+                case "yellowColorBTN":
                     this.dcolor = "#FFF7F71F";
                     editMode = false;
                     clearEditDots();
                     break;
+
                 //PINK
-                case "FFF71FB2":
+                case "pinkColorBTN":
                     this.dcolor = "#FFF71FB2";
                     editMode = false;
                     clearEditDots();
